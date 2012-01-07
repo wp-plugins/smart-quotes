@@ -4,7 +4,7 @@ Donate link: http://ten-fingers-and-a-brain.com/donate/
 Tags: smart quotes, curly quotes, curly, quotes, wptexturize
 Requires at least: 3.2
 Tested up to: 3.3
-Stable tag: trunk
+Stable tag: 0.1
 
 Change the quotation marks that are automatically rendered as smart or curly quotes inside your content.
 

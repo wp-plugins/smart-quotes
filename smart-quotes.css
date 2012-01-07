@@ -7,14 +7,14 @@ ul#smart-quotes-examples
 ul#smart-quotes-examples li
 {
   display: inline;
-  font-size: 30px;
-  margin: 0 3px 0 0;
+  font-size: 2.5em;
+  margin: 0 .1em 0 0;
 }
 
 ul#smart-quotes-examples li a
 {
   text-decoration: none;
-  padding: 3px 9px;
+  padding: .1em .3em;
   border: solid 1px #e6db55;
   background-color: #fffbcc;
   color: #464646;
@@ -22,6 +22,6 @@ ul#smart-quotes-examples li a
 
 #smart-quotes-opening, #smart-quotes-closing
 {
-  font-size: 30px;
+  font-size: 2.5em;
   text-align: center;
 }

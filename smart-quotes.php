@@ -3,7 +3,7 @@
 Plugin Name: Smart Quotes
 Plugin URI: http://ten-fingers-and-a-brain.com/wordpress-plugins/smart-quotes/
 Version: 0.3
-Description: Change the quotation marks, that are automatically rendered as smart or curly quotes inside your content, from the default English style (&#8220;&#8230;&#8221;) to anything you like, e.g. to Croatian/Hungarian/Polish/Romanian style quotation marks (&#8222;&#8230;&#8221;), Czech or German style (&#8222;&#8230;&#8220;), Danish style (&#187;&#8230;&#171;), Finnish or Swedish style (&#8221;&#8230;&#8221;), French style (&#171;&nbsp;&#8230;&nbsp;&#187; &ndash; with spaces), Greek/Italian/Norwegian/Potuguese/Russian/Spanish/Swiss style (&#171;&#8230;&#187; &ndash; without spaces), Japanese or Traditional Chinese style (&#12300;&#8943;&#12301;), or actually to any arbitrary character combination of your choice. Of course you can turn off curly quotes entirely by picking the so-called &quot;dumb&quot; quotes (&quot;&#8230;&quot;).
+Description: Change the quotation marks, that are automatically rendered as smart or curly quotes inside your content, from the default English style (&#8220;&#8230;&#8221;) to anything you like, e.g. to Croatian/Hungarian/Polish/Romanian style quotation marks (&#8222;&#8230;&#8221;), Czech or German style (&#8222;&#8230;&#8220;), Danish style (&#187;&#8230;&#171;), Finnish or Swedish style (&#8221;&#8230;&#8221;), French style (&#171;&nbsp;&#8230;&nbsp;&#187; &ndash; with spaces), Greek/Italian/Norwegian/Portuguese/Russian/Spanish/Swiss style (&#171;&#8230;&#187; &ndash; without spaces), Japanese or Traditional Chinese style (&#12300;&#8943;&#12301;), or actually to any arbitrary character combination of your choice. Of course you can turn off curly quotes entirely by picking the so-called &quot;dumb&quot; quotes (&quot;&#8230;&quot;).
 Author: Martin Lormes
 Author URI: http://ten-fingers-and-a-brain.com/
 Text Domain: smart-quotes
@@ -35,20 +35,22 @@ this program. If not, see <http://www.gnu.org/licenses/>.
 function tfnab_smart_quotes_get_option ()
 {
   static $quote1, $quote2;
+  static $quotes_set = false;
   if ( empty( $quote1 ) )
   {
-    $option = get_option( 'smart-quotes' );
+    $quotes_set = ( false !== ( $option = get_option( 'smart-quotes' ) ) );
     $quote1 = ( is_array( $option ) && isset( $option['opening'] ) ) ? trim( $option['opening'] ) : '&#8220;';
     $quote2 = ( is_array( $option ) && isset( $option['closing'] ) ) ? trim( $option['closing'] ) : '&#8221;';
   }
-  return array( $quote1, $quote2 );
+  return array( $quote1, $quote2, $quotes_set );
 } // function tfnab_smart_quotes_get_option
 
 /** return user-defined smart quotes instead of those set in the language file */
 function tfnab_smart_quotes_gettext_with_context ( $s, $original, $context, $domain )
 {
   if ( 'default' != $domain ) return $s;
-  list( $quote1, $quote2 ) = tfnab_smart_quotes_get_option();
+  list( $quote1, $quote2, $quotes_set ) = tfnab_smart_quotes_get_option();
+  if ( !$quotes_set ) return $s;
   if ( 'opening curly quote' == $context && '&#8220;' == $original ) return str_replace( array( '<', '>' ), array( '&lt;', '&gt;' ), $quote1 );
   if ( 'closing curly quote' == $context && '&#8221;' == $original ) return str_replace( array( '<', '>' ), array( '&lt;', '&gt;' ), $quote2 );
   return $s;
@@ -62,7 +64,8 @@ add_filter( 'gettext_with_context', 'tfnab_smart_quotes_gettext_with_context', 1
  */
 function tfnab_smart_quotes_wp_head ()
 {
-  list( $quote1, $quote2 ) = tfnab_smart_quotes_get_option();
+  list( $quote1, $quote2, $quotes_set ) = tfnab_smart_quotes_get_option();
+  if ( $quotes_set ) :
   ?>
   <style type="text/css">/*<![CDATA[*/
     q:before {
@@ -73,6 +76,7 @@ function tfnab_smart_quotes_wp_head ()
     }
   /*]]>*/</style>
   <?php
+  endif;
 } // function tfnab_smart_quotes_wp_head
 add_action( 'wp_head', 'tfnab_smart_quotes_wp_head' );
 
@@ -115,7 +119,7 @@ if ( is_admin() )
         <li><a href="#" onclick="set_smart_quotes('&#187;','&#171;');return false;" title="<?php _e( 'Danish', 'smart-quotes' ); ?>">&#187;&#8230;&#171;</a></li>
         <li><a href="#" onclick="set_smart_quotes('&#8221;','&#8221;');return false;" title="<?php _e( 'Finnish, Swedish', 'smart-quotes' ); ?>">&#8221;&#8230;&#8221;</a></li>
         <li><a href="#" onclick="set_smart_quotes('&#171;&nbsp;','&nbsp;&#187;');return false;" title="<?php _e( 'French (with spaces)', 'smart-quotes' ); ?>">&#171;&nbsp;&#8230;&nbsp;&#187;</a></li>
-        <li><a href="#" onclick="set_smart_quotes('&#171;','&#187;');return false;" title="<?php _e( 'Greek, Italian, Norwegian, Potuguese, Russian, Spanish, Swiss (without spaces)', 'smart-quotes' ); ?>">&#171;&#8230;&#187;</a></li>
+        <li><a href="#" onclick="set_smart_quotes('&#171;','&#187;');return false;" title="<?php _e( 'Greek, Italian, Norwegian, Portuguese, Russian, Spanish, Swiss (without spaces)', 'smart-quotes' ); ?>">&#171;&#8230;&#187;</a></li>
         <li><a href="#" onclick="set_smart_quotes('&#12300;','&#12301;');return false;" title="<?php _e( 'Japanese, Traditional Chinese', 'smart-quotes' ); ?>">&#12300;&#8943;&#12301;</a></li>
         <li><a href="#" onclick="set_smart_quotes('&quot;','&quot;');return false;" title="<?php _e( '&quot;dumb quotes&quot;', 'smart-quotes' ); ?>">&quot;&#8230;&quot;</a></li>
       </ul>

@@ -1,0 +1,78 @@
+# Copyright (C) 2012 Smart Quotes
+# This file is distributed under the same license as the Smart Quotes package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Smart Quotes 0.3\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/smart-quotes\n"
+"POT-Creation-Date: 2012-01-10 22:27:17+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2012-01-10 23:52+0100\n"
+"Last-Translator: Martin Lormes <martinhh@gmail.com>\n"
+"Language-Team: Martin Lormes <martinhh@gmail.com>\n"
+"X-Poedit-Language: de\n"
+"X-Poedit-Country: DE\n"
+
+#: smart-quotes.php:102
+msgid "Enter any characters you would like to use for smart quotes; click on any of the examples below to use it (hover for more information)"
+msgstr "Gib beliebige Zeichen ein, die Du gerne als typografische Anführungszeichen verwenden möchtest; klicke auf eins der Beispiele, um es zu verwenden (zeige ohne zu klicken, um mehr zu erfahren)"
+
+#: smart-quotes.php:112
+msgid "English, WordPress default"
+msgstr "Englisch, WordPress Standard"
+
+#: smart-quotes.php:113
+msgid "Croatian, Hungarian, Polish, Romanian"
+msgstr "Kroatisch, Ungarisch, Polnisch, Rumänisch"
+
+#: smart-quotes.php:114
+msgid "Czech, German"
+msgstr "Tschechisch, Deutsch"
+
+#: smart-quotes.php:115
+msgid "Danish"
+msgstr "Dänisch"
+
+#: smart-quotes.php:116
+msgid "Finnish, Swedish"
+msgstr "Finnisch, Schwedisch"
+
+#: smart-quotes.php:117
+msgid "French (with spaces)"
+msgstr "Französisch (mit Leerzeichen)"
+
+#: smart-quotes.php:118
+msgid "Greek, Italian, Norwegian, Portuguese, Russian, Spanish, Swiss (without spaces)"
+msgstr "Griechisch, Italienisch, Norwegisch, Portugiesisch, Russisch, Spanisch, Schweizerisch (ohne Leerzeichen)"
+
+#: smart-quotes.php:119
+msgid "Japanese, Traditional Chinese"
+msgstr "Japanisch, Chinesisch"
+
+#: smart-quotes.php:120
+msgid "&quot;dumb quotes&quot;"
+msgstr "&quot;gerade&quot; Anführungszeichen"
+
+#. #-#-#-#-#  plugin.pot (Smart Quotes 0.3)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: smart-quotes.php:141
+msgid "Smart Quotes"
+msgstr "Typografische Anführungszeichen"
+
+#. Plugin URI of the plugin/theme
+msgid "http://ten-fingers-and-a-brain.com/wordpress-plugins/smart-quotes/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Change the quotation marks, that are automatically rendered as smart or curly quotes inside your content, from the default English style (&#8220;&#8230;&#8221;) to anything you like, e.g. to Croatian/Hungarian/Polish/Romanian style quotation marks (&#8222;&#8230;&#8221;), Czech or German style (&#8222;&#8230;&#8220;), Danish style (&#187;&#8230;&#171;), Finnish or Swedish style (&#8221;&#8230;&#8221;), French style (&#171;&nbsp;&#8230;&nbsp;&#187; &ndash; with spaces), Greek/Italian/Norwegian/Portuguese/Russian/Spanish/Swiss style (&#171;&#8230;&#187; &ndash; without spaces), Japanese or Traditional Chinese style (&#12300;&#8943;&#12301;), or actually to any arbitrary character combination of your choice. Of course you can turn off curly quotes entirely by picking the so-called &quot;dumb&quot; quotes (&quot;&#8230;&quot;)."
+msgstr "Ändere die Anführungszeichen, die in Deinen Beiträgen automatisch in typografische (geschwungene) Anführungszeichen umgewandelt werden, von der englischen Standardeinstellung (&#8220;&#8230;&#8221;) zu beliebigen anderen Zeichen, z.B. in im Kroatischen/Ungarischen/Polnischen/Rumänischen übliche Anführungszeichen (&#8222;&#8230;&#8221;), im Tschechischen oder Deutschen Stil (&#8222;&#8230;&#8220;), Dänisch (&#187;&#8230;&#171;), Finnisch oder Schwedisch (&#8221;&#8230;&#8221;), Französisch (&#171;&nbsp;&#8230;&nbsp;&#187; &ndash; mit Leerzeichen), Griechisch/Italienisch/Norwegisch/Portugiesisch/Russisch/Spanisch/Schweizerisch (&#171;&#8230;&#187; &ndash; ohne Leerzeichen), Japanisch oder Chinesisch (&#12300;&#8943;&#12301;), oder jede beliebige andere Kombination Deiner Wahl. Natürlich kannst Du typographische Anführungszeichen auch ganz ausschalten, indem Du so genannte &quot;gerade&quot; Anführungszeichen verwendest (&quot;&#8230;&quot;)."
+
+#. Author of the plugin/theme
+msgid "Martin Lormes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://ten-fingers-and-a-brain.com/"
+msgstr ""
+

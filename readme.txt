@@ -3,8 +3,8 @@ Contributors: tfnab
 Donate link: http://ten-fingers-and-a-brain.com/donate/
 Tags: smart quotes, curly quotes, curly, quotes, wptexturize
 Requires at least: 2.9
-Tested up to: 3.3
-Stable tag: 0.3
+Tested up to: 3.5
+Stable tag: 0.4
 
 Change the quotation marks that are automatically rendered as smart or curly quotes inside your content.
 
@@ -19,6 +19,10 @@ Change the quotation marks, that are automatically rendered as smart or curly qu
 1. Go to the 'Writing Settings' screen where you will be able to configure your 'Smart Quotes'
 
 == Changelog ==
+
+= 0.4 =
+* compatibility with WordPress 3.4 and 3.5
+* fixed bug where stylesheet (for admin) and plugin action links did not load correctly when plugin was loaded from symlinked directory
 
 = 0.3 =
 * fixed bug where CSS styles for &lt;q> element were styled incorrectly when user hadn't picked quotation marks
@@ -35,6 +39,9 @@ Change the quotation marks, that are automatically rendered as smart or curly qu
 * initial public release
 
 == Upgrade Notice ==
+
+= 0.4 =
+compatibility with WordPress 3.4 and 3.5
 
 = 0.3 =
 bugfix release; German language file added (Deutsche Übersetzung)
